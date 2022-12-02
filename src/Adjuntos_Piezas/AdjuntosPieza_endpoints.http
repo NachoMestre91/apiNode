@@ -1,0 +1,41 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+
+@puerto=3000
+
+#Listar Adjuntos Piezas
+POST http://localhost:{{puerto}}/adjuntosPieza/listar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "_id":"60991ee743f2d9206c9152b1"
+}
+
+###
+#Eliminar Adjunto Pieza
+DELETE http://localhost:{{puerto}}/adjuntosPieza/eliminar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "piezaId":"60991ee743f2d9206c9152b1",
+    "archivoId":"1JOSGFd4T-UYCyo4GksETVbUTsdgvF3P8"
+}
+
+###
+#Modificar Adjuntos Piezas
+PUT http://localhost:{{puerto}}/adjuntosPieza/modificar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+###
+#Agregar Adjuntos Piezas
+POST http://localhost:{{puerto}}/adjuntosPieza/crear
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}

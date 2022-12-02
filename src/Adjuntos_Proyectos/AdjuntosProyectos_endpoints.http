@@ -1,0 +1,62 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+
+#Traer Adjuntos de Proyectos
+POST http://localhost:3000/adjuntosProyecto/listar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "proyectoId":"60958faad09380207ce89025"
+}
+
+###
+#Eliminar Adjunto de Proyecto
+DELETE http://localhost:3000/adjuntosProyecto/eliminar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "proyectoId":"60958faad09380207ce89025",
+    "idArchivo":"14Y1E81RGtjy4mgm1XepcG6RBZFXAaGAE"
+}
+
+###
+#Modificar Adjuntos Proyectos
+PUT http://localhost:3000/adjuntosProyecto
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+###
+#Agregar Adjuntos Proyectos
+POST http://localhost:3200/adjuntosProyecto/crear
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+   "_id": "607ed86eaa286d00230ae5d9",
+    "nombreProyecto": "Proyecto 6",
+    "descripcion": "Quito los archivos",
+    "prioridadId": "607592a3a7abe31c0cf6ffbe",
+    "fechaDeadLine": "2021-05-01",
+    "fechaRecordatorio": "2021-04-20",
+    "usuarioId": "6075a5ec8d77b53ca882d7ad",
+    "tipoCategoriaId": "607094da3d79571094121e6c",
+    "estadoId": "60758a044c6b37241c1c9390",
+    "categorias":[
+        "607091c325b6d71c1c3105cb","607494a6cde8f430bcd4f2fd","607091aa25b6d71c1c3105ca"
+    ],
+    "archivos":[
+        {
+            "name":"archivo1.pdf",
+            "size": 12500,
+            "type": "application/pdf"
+        }
+    ]
+}
+###

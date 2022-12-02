@@ -1,0 +1,138 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+
+@puerto=3200
+#USER->Login
+POST http://localhost:{{puerto}}/usuarios/Login HTTP/1.1
+Connection: {{conection}}
+Content-Type: {{content-type}}
+
+{
+    "email": "administrador@lowa.com",
+    "password": "Gabi1123"
+}
+
+###
+#USER->CreateUsuario
+POST http://localhost:{{puerto}}/usuarios/crear
+Content-Type: {{content-type}}
+Connection: {{conection}}
+
+{
+    "nombre": "Medios",
+    "apellido": "",
+    "email": "medios@lowa.com",
+    "nombreUsuario": "medios",
+    "password": "Gabi1123",
+    "cuit": "2",
+    "rolId": "6078339a802415427c4b3ec6"
+}
+
+###
+#USER->CreateUserInstitucion
+POST http://localhost:{{puerto}}/ 
+
+{
+    "nombre":"Eco",
+    "email": "david@lowa.com",
+    "cuitCuil": 4242123,
+    "password": "cambios"
+}
+
+###
+#USER->Eliminar Usuario Persona
+DELETE http://localhost:{{puerto}}/usuarios/eliminar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "usuarioId":"60213b2cc187730d184797db"
+}
+
+###
+#USER->Eliminar Usuario Institucion
+DELETE http://localhost:{{puerto}}/usuarios/ElimUserInst
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "usuarioId":"60213b2cc187730d184797db"
+}
+
+###
+#USER->Modificar Usuario Persona
+PUT http://localhost:{{puerto}}/usuarios/modificar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "_id":"60f1a2e7551bfa0023c75c53",
+    "nombre":"Productor",
+    "apellido":"Tres",
+    "email": "productor3@lowa.com"
+}
+
+###
+#USER->Modificar Usuario Institucion
+PUT http://localhost:{{puerto}}/usuarios/ModUserInst
+Connection: {{conection}}
+Access-Token: {{token}}
+
+
+#Listar usuarios
+###
+GET http://localhost:{{puerto}}/usuarios/listar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+
+###
+#Validar Usuario con hash
+#hash generado = $2b$10$mnKSyGcMSX.xGgGZMk6/m.fc9rdqJZJyQHEo02Q4AZuWdP5k9TVrK
+POST http://localhost:{{puerto}}/usuarios/Validar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "codRegistro":"Pepe2021"
+}
+
+###
+#Recuperar Pass
+POST http://localhost:{{puerto}}/usuarios/recuperarPass
+Content-Type: {{content-type}}
+Connection: {{conection}}
+
+{
+    "mailUsuario":"alexis@lowa.com.ar"
+}
+
+###
+#
+POST http://localhost:{{puerto}}/usuarios/obtenerDocumento
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "usuarioId":"60c3c8a9ff2bc100233b3805",
+    "tipoDocumento":"1"
+}
+
+###
+#Obtener foto
+POST http://localhost:{{puerto}}/usuarios/obtenerFoto
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "usuarioId":"60c3c8a9ff2bc100233b3805"
+}
+

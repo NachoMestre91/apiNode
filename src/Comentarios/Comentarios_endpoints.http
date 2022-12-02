@@ -1,0 +1,49 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+
+#Traer Comentarios
+GET http://localhost:3000/Comentarios/
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "idUsuario":"",
+    "idProyecto":""
+}
+
+###
+#Eliminar Comentario
+DELETE http://localhost:3000/Comentarios/ElimComent
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "idComentario":""
+}
+
+###
+#Modificar Comentario
+PUT http://localhost:3000/Comentarios/ModifComent
+Connection: {{conection}}
+Content-Type: {{content-type}}
+Access-Token: {{token}}
+
+{
+    "idComentario":""
+}
+
+###
+#Agregar Comentarios
+POST http://localhost:3000/Comentarios/CComent
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "idUsuario":"",
+    "idProyecto":"",
+    "texto":""
+}

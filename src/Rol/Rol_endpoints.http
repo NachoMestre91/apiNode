@@ -1,0 +1,47 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+
+@puerto=3200
+
+#Listar Roles
+GET http://localhost:{{puerto}}/roles/listar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+###
+#Agregar Rol
+POST http://localhost:{{puerto}}/roles/crear
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "nombreRol": "Nuevo Rol 4"
+}
+
+###
+#Modificar Rol
+PUT http://localhost:{{puerto}}/roles/modificar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "rolId":"60b679ae8a8a15311cd58294",
+    "nombreRol":"alla la estan editando"
+}
+
+###
+#Eliminar Rol
+DELETE http://localhost:{{puerto}}/roles/eliminar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "rolId":"60b679a68a8a15311cd58293"
+}
+
+

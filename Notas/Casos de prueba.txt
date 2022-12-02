@@ -1,0 +1,52 @@
+Casos de prueba para eliminar proyecto
+1-Proyecto con 4 adjuntos. Se debe eliminar primero de drive y luego de la BD -> éxito
+2-Proyecto con 2 adjuntos + 2 piezas, una de esas piezas tiene 3 adjuntos-> fracaso, elimino de drive todos los adjuntos (de proyecto y pieza), de la colección eliminó los adjuntos de proyectos, pero las piezas no (sus adjuntos si)
+Se procede a cambiar el map por for await (iterador por cada pieza)  
+3- Pryecto con 2 adjuntos + 2 piezas, una de ellas con 3 adjuntos (se prueba el nuevo iterador)->éxito, elimina los adjuntos de ambas colecciones y de drive.
+4- Proyecto: tiene 1 adjunto + 
+    *Pieza 5: tiene estado EnCurso + un adjunto
+    *Pieza 8: tiene estado Asignado + 2 adjuntos -> 
+
+Prueba 1-
+Resultado esperado:
+*1 adjunto de proyecto eliminado (de BD y Drive)
+*2 adjuntos eliminados de la pieza 8 (de BD y Drive) + la eliminación de la pieza 8
+
+Resultado obtenido
+*1 adjunto de proyecto eliminado (de Bd y Drive)
+*Eliminó los adjuntos de ambas piezas (de BD y Drive)
+*Eliminó ambas piezas de la base de datos
+
+5- Proyecto con 2 adjuntos
+    *Pieza 8: estado Asignado + 4 adjuntos
+    *Pieza 9: Estado en curso + 1 adjunto
+Prueba 2:
+Resultado esperado:
+*2 adjuntos de proyecto eliminados (de BD y Drive)
+*4 adjuntos de pieza eliminados (de BD y Drive) 
+*Pieza 8 eliminada
+
+Resultado obtenido
+*2 adjuntos de proyecto eliminados (de BD y Drive)
+*Pieza 8 eliminada
+*4 adjuntos eliminados de la pieza 8
+
+6-Proyecto con 4 adjuntos + 3 piezas
+    *Pieza 9: estado en curso + 1 adjunto
+    *Pieza 8: estado Asignado + 3 adjuntos
+    *Pieza 10: estado Terminado + 8 adjuntos
+
+Resultado esperado:
+*proyecto eliminado
+*4 adjuntos de proyectos eliminados (de drive y BD)
+*3 adjuntos de pieza eliminados (de drive y BD)
+*Pieza 8 eliminada
+
+Resultado obtenido
+*Proyecto eliminado
+*4 adjuntos de proyectos eliminados (de drive y BD)
+*Pieza 8 eliminada
+*3 adjuntos de pieza 8 eliminados (de drive y BD)
+
+
+

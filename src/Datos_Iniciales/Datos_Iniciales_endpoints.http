@@ -1,0 +1,18 @@
+@puerto=3200
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+
+@protocolo=http
+@dominio=localhost
+@main_route=datosIniciales
+
+###
+POST {{protocolo}}://{{dominio}}:{{puerto}}/{{main_route}}/listar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "usuarioId":"60f1a2e7551bfa0023c75c57"
+}

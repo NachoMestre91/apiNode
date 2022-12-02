@@ -1,0 +1,45 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+#Traer TipoCategoria
+GET http://localhost:3000/tiposCategoria/listar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+###
+#Agregar TipoCategoria
+POST http://localhost:3000/tiposCategoria/crear
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "nombreTipoCategoria": "Figura Institucional"
+}
+
+
+###
+#Modificar TipoCategoria
+PUT http://localhost:3000/tiposCategoria/modificar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "tipoCategoriaId":"60704a675c746519289a805a",
+    "nombreTipoCategoria": "Commitia neeeño"
+}
+
+###
+#Eliminar TipoCategoria
+DELETE http://localhost:3000/tiposCategoria/eliminar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "tipoCategoriaId": "60704a675c746519289a805a"
+}
+
+

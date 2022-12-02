@@ -1,0 +1,126 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+
+@puerto=3200
+
+#Traer todas las Piezas para el admin
+#En caso de ser productor, filtrar por proyectoId y por asignadoId
+POST http://localhost:{{puerto}}/piezas/listar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "proyectoId":"609e6fe0aa4dcc12040f8068",
+    "asignadoId":"60902fa100da17284caeebd0"
+}
+
+###
+#Eliminar Pieza
+DELETE http://localhost:{{puerto}}/piezas/eliminar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "piezaId":"6100112a1336633604bce9cf",
+    "usuarioId":"60f1a2e7551bfa0023c75c57"
+}
+
+###
+#Modificar Pieza
+PUT http://localhost:{{puerto}}/piezas/modificar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "_id":"609ad2c46321f21a7c61d850",
+    "proyectoId":"60957a71ba42a02360cf018e",
+    "descripcion":"Nueva descripcion para la pieza - probando",
+    "estadoId":"EnCurso",
+    "asignadoId":"60902f7100da17284caeebcf",
+    "fecha":"2021-05-12"
+}
+
+###
+#Estado = Terminado de Pieza
+PUT http://localhost:{{puerto}}/piezas/terminar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "_id":"609e784c73aa3b1a4c132535"
+}
+
+###
+#Rechazar Pieza
+PUT http://localhost:{{puerto}}/piezas/rechazar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "piezaId":"60faffc4c3fe5a31081c5551"
+}
+
+###
+#Agregar Pieza
+POST http://localhost:{{puerto}}/piezas/crear
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+  "asignadoId": "",
+  "descripcion": "Pieza 10 Alexis",
+  "fechaVencimiento": "2021-05-18T03:00:00.000Z",
+  "proyectoId": "60b4de027e766a44443e8f06"
+}
+
+
+###
+#Agregar adjunto a la pieza
+POST http://localhost:{{puerto}}/Piezas/AdjPieza
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+###
+#Asignar responsable a la pieza
+PUT http://localhost:{{puerto}}/Piezas/asignarResp
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "usuarioId":"",
+    "idPieza":""
+}
+
+###
+#Calcular estado de la pieza
+POST http://localhost:{{puerto}}/piezas/estadoPieza
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "_id":"60940835335ef732407412d5"
+}
+
+###
+#Listar Piezas Terminadas
+GET http://localhost:{{puerto}}/piezas/listarFinalizadas
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+###
+#Listar Piezas Aprobadas
+GET http://localhost:{{puerto}}/piezas/listarAprobadas
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}

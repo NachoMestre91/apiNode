@@ -1,0 +1,40 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+
+@puerto=3200
+
+
+#Agregar Favorito
+POST http://localhost:{{puerto}}/favoritos/seguir
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "usuarioId":"60b13587aa3fb900231544db",
+    "proyectoId":"60b135d5aa3fb900231544f5"
+}
+
+###
+#Dejar de seguir el proyecto
+POST http://localhost:{{puerto}}/favoritos/dejarDeSeguir
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "usuarioId":"60b13586aa3fb900231544d7",
+    "proyectoId":"60b13c72aa3fb900231544fe"
+}
+
+###
+#Listar favoritos para un usuario
+POST http://localhost:{{puerto}}/favoritos/listar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "usuarioId":"60b13587aa3fb900231544db"
+}

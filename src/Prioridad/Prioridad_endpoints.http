@@ -1,0 +1,45 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+
+#Traer Prioridades
+GET http://localhost:3000/prioridad/listar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+###
+#Eliminar Prioridad
+DELETE http://localhost:3000/prioridad/eliminar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "prioridadId":"6079a708b3faf31918e110dc"
+}
+
+###
+#Modificar Prioridad
+PUT http://localhost:3000/prioridad/modificar
+Connection: {{conection}}
+Content-Type: {{content-type}}
+Access-Token: {{token}}
+
+{
+    "prioridadId":"6079a708b3faf31918e110dc",
+    "nombrePrioridad":"Editando otra veezzzzz",
+    "color":"#F6CA19"
+}
+
+###
+#Agregar Prioridad
+POST http://localhost:3000/prioridad/crear
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "nombrePrioridad":"ELLA",
+    "color" : "#11B011"
+}

@@ -1,0 +1,35 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+
+#Traer PiezasMedios
+GET http://localhost:3200/piezasMedios/listar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+###
+#Eliminar PiezasMedios
+DELETE http://localhost:3200/piezasMedios/ElimMedPieza
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+###
+#Modificar PiezasMedios
+PUT http://localhost:3200/piezasMedios/modificar
+Connection: {{conection}}
+Content-Type: {{content-type}}
+Access-Token: {{token}}
+
+###
+#Agregar PiezasMedios
+POST http://localhost:3200/piezasMedios/crear
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+        "_id":"6095b0bff7794017f45a0c0c" 
+}
+###

@@ -1,0 +1,52 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+
+@puerto=3200
+
+#Traer Categorias
+POST http://localhost:{{puerto}}/categorias/listar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "tipoCategoriaId":"1"
+}
+
+###
+#Eliminar Categoria
+DELETE http://localhost:{{puerto}}/categorias/eliminar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "categoriaId": "60b7825a8b3fa915582f98bd"
+}
+
+###
+#Modificar Categoría
+PUT http://localhost:{{puerto}}/categorias/modificar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "categoriaId": "60b7825a8b3fa915582f98bd",
+    "nombreCategoria": "MODIFICANDO la subcateg WEY",
+    "color":"#808000"
+}
+
+###
+#Agregar Categoría
+POST http://localhost:{{puerto}}/categorias/crear
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "nombreCategoria": "Nuevo Ministerio probando la inserción",
+    "tipoCategoriaId": "1",
+    "color":"#FF0000"
+}

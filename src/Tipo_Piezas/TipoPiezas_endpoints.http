@@ -1,0 +1,43 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+#Traer TipoPieza
+GET http://localhost:3000/TipoPieza/
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+###
+#Agregar TipoPieza
+POST http://localhost:3000/TipoPieza/CTipoPieza
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "nombreTipoPieza": "Pieza Procesada"
+}
+
+###
+#Modificar TipoPieza
+PUT http://localhost:3000/TipoPieza/ModifTipoPieza
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "idTipoPieza": "6037e0bf3d3d7c07dca5748f",
+    "nombreTipoPiezaModif": "Modificando Pieza"
+
+}
+
+###
+#Eliminar TipoPieza
+DELETE http://localhost:3000/TipoPieza/ElimTipoPieza
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "idTipoPieza": "6037e0bf3d3d7c07dca5748f"
+}

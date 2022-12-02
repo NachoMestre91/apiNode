@@ -1,0 +1,160 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+
+@puerto=3001
+
+###
+#Traer Proyectos
+GET http://localhost:{{puerto}}/proyectos/listar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+###
+
+#Crear Proyecto
+POST http://localhost:{{puerto}}/proyectos/crear
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "tipoCategoriaId":0
+}
+
+###
+#Eliminar Proyecto en estado Borrador
+DELETE http://localhost:{{puerto}}/proyectos/eliminar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "proyectoId":"60a55b7631c0544518716570",
+    "usuarioId":"60902f7100da17284caeebcf"
+}
+
+###
+#Archivar proyecto
+PUT http://localhost:{{puerto}}/proyectos/archivar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "proyectoId": "",
+}
+
+###
+#Estado del proyecto
+PUT http://localhost:{{puerto}}/proyectos/estado
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "proyectoId":"",
+    "estadoId": ""
+}
+
+
+
+###
+#Modificar Proyecto
+PUT http://localhost:{{puerto}}/proyectos/actualizar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+   "_id":"60b4de027e766a44443e8f06",
+   "nombreProyecto":"Proyecto ALEXIS",
+   "descripcion":"pequeña descripion para probar el calculo de estado",
+   "prioridadId":2,
+   "fechaDeadLine":"2021-06-06",
+   "fechaRecordatorio":"2021-06-12",
+   "usuarioId":"60b13587aa3fb900231544db",
+   "tipoCategoriaId":0,
+   "estadoId":0,
+   "categorias":["60b13587aa3fb900231544e0"]
+}
+
+###
+#Pausar proyecto
+PUT http://localhost:{{puerto}}/proyectos/pausar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "proyectoId":"609e6fe0aa4dcc12040f8068",
+    "usuarioId":"6090302400da17284caeebd1"
+}
+
+###
+#Aprobar Proyecto
+PUT http://localhost:{{puerto}}/proyectos/aprobar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "proyectoId":"609e6fe0aa4dcc12040f8068",
+    "usuarioId":"60902fa100da17284caeebd0"
+}
+###
+#Agregar Proyecto
+POST http://localhost:{{puerto}}/proyectos/crear
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "_id": "607edbc7aa286d00230ae5db",
+    "nombreProyecto": "Proyecto 6",
+    "descripcion": "",
+    "prioridadId": "607592a3a7abe31c0cf6ffbe",
+    "fechaDeadLine": "2021-05-01",
+    "fechaRecordatorio": "2021-04-20",
+    "usuarioId": "6075a5ec8d77b53ca882d7ad",
+    "tipoCategoriaId": "0",
+    "estadoId": "1",
+    "categorias":[
+        "607091c325b6d71c1c3105cb","607494a6cde8f430bcd4f2fd","607091aa25b6d71c1c3105ca"
+    ],
+    
+}
+
+###
+#Eliminar proyecto en estado borrador
+DELETE http://localhost:{{puerto}}/proyectos/eliminar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}} 
+
+{
+    "proyectoId":"60afb15133e79924f8050f93",
+    "usuarioId":"60a813020a81140023dfc003"
+}
+
+###
+#Archivar Proyecto
+PUT http://localhost:{{puerto}}/proyectos/archivar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}} 
+
+{
+    "proyectoId":"60b4de027e766a44443e8f06"
+}
+###
+#Traer ProyectosPorPrensa
+POST http://localhost:{{puerto}}/proyectos/listarPorPrensa
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "idUsuario":"611c05e066bd48d0131eed79"
+}
+###

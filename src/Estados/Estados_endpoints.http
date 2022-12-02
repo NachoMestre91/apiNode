@@ -1,0 +1,47 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJkZXZpZCIsImFkbWluIjoxLCJpYXQiOjE2MTAwMjEwOTB9.LRduA4z1AHhzLDVgj7uA_U1wJWRIVth6ym1FRF8nO4Q
+@content-type=application/json
+@conection=keep-alive
+
+@puerto=3200
+
+#Traer Estados
+GET http://localhost:3000/estados/listar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+###
+#Eliminar Estado
+DELETE http://localhost:{{puerto}}/estados/eliminar
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "estadoId": "60b676c52c40ed2db09b212d"
+}
+
+###
+#Modificar Estado
+PUT http://localhost:{{puerto}}/estados/modificar
+Connection: {{conection}}
+Content-Type: {{content-type}}
+Access-Token: {{token}}
+
+{
+    "estadoId": "60b661002a78b432644c1eec",
+    "nombreEstado":"editando el estado nuevamente",
+    "color":"#19F6EF"
+}
+
+###
+#Agregar Estados
+POST http://localhost:{{puerto}}/estados/crear
+Content-Type: {{content-type}}
+Connection: {{conection}}
+Access-Token: {{token}}
+
+{
+    "nombreEstado": "Nuevo estado 10",
+    "color":"#45F619"
+}
